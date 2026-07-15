@@ -115,6 +115,7 @@ const Register = () => {
                                     placeholder="john@example.com"
                                     error={errors.email?.message}
                                     disabled={showOTPForm}
+                                    autoComplete="email"
                                     {...registerForm("email", { 
                                         required: "Email is required",
                                         pattern: {
@@ -134,6 +135,7 @@ const Register = () => {
                                     placeholder="••••••••"
                                     error={errors.password?.message}
                                     disabled={showOTPForm}
+                                    autoComplete="new-password"
                                     {...registerForm("password", { 
                                         required: "Password is required",
                                         minLength: {
@@ -228,7 +230,6 @@ const Register = () => {
                                         }}
                                         theme="filled_black"
                                         text="continue_with"
-                                        width="100%"
                                     />
                                 </div>
                                 <Link to="/login" className="w-full flex justify-center items-center py-2 px-4 border border-faint font-ui text-[10px] uppercase tracking-widest text-bone hover:bg-surface transition-colors">

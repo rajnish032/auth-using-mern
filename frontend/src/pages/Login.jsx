@@ -77,6 +77,7 @@ const Login = () => {
                                                 message: "Invalid email address"
                                             }
                                         })}
+                                        autoComplete="email"
                                     />
                                 </div>
                                 
@@ -91,6 +92,7 @@ const Login = () => {
                                         {...registerForm("password", { 
                                             required: "Password is required" 
                                         })}
+                                        autoComplete="current-password"
                                     />
                                 </div>
                             </div>
@@ -145,7 +147,6 @@ const Login = () => {
                                         }}
                                         theme="filled_black"
                                         text="continue_with"
-                                        width="100%"
                                     />
                                 </div>
                                 <Link to="/register" className="w-full flex justify-center items-center py-2.5 px-4 border border-faint font-ui text-xs uppercase tracking-widest text-bone hover:bg-surface transition-colors">
