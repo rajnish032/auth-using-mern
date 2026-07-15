@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --void-color: #14181D;
+  --surface-color: #1C2128;
+  --bone-color: #EDE9E0;
+  --structure-color: #C9C2B4;
+  --accent-color: #C9603F;
+  --accent-secondary-color: #B99457;
+  --muted-color: #8B8579;
+  --faint-color: #5B564C;
+}
+
+.light {
+  --void-color: #F4F1EA;
+  --surface-color: #FFFFFF;
+  --bone-color: #1A1A1A;
+  --structure-color: #D1CDCD;
+  --accent-color: #C9603F;
+  --accent-secondary-color: #B99457;
+  --muted-color: #71717A;
+  --faint-color: #E4E4E7;
+}
+
+@theme {
+  --color-void: var(--void-color);
+  --color-surface: var(--surface-color);
+  --color-bone: var(--bone-color);
+  --color-structure: var(--structure-color);
+  --color-accent: var(--accent-color);
+  --color-accent-secondary: var(--accent-secondary-color);
+  --color-muted: var(--muted-color);
+  --color-faint: var(--faint-color);
+  --color-primary: var(--accent-color);
+  
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
+  --font-ui: 'Inter', sans-serif;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  @apply bg-void text-bone font-body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force everything to void in dark mode just in case, though this design system IS essentially a dark mode */
+.dark body {
+  @apply bg-void text-bone;
+}
+
+/* Overrides for default rounded corners & shadows */
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Custom Editorial Ambient Grid Background */
+.editorial-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(185, 148, 87, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(185, 148, 87, 0.05) 1px, transparent 1px);
+}
+
+/* Micro-animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
