@@ -13,7 +13,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://authusingmern.netlify.app', process.env.CLIENT_URL].filter(Boolean),
     credentials: true,
 }));
 
